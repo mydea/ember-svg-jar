@@ -63,7 +63,6 @@ jobs:
         with:
           path: |
             ${{ steps.global-cache-dir-path.outputs.dir }}
-            node_modules
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{
             hashFiles('**/yarn.lock'
             ) }}
@@ -108,7 +107,6 @@ jobs:
         with:
           path: |
             ${{ steps.global-cache-dir-path.outputs.dir }}
-            node_modules
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{
             hashFiles('**/yarn.lock'
             ) }}
@@ -155,7 +153,6 @@ jobs:
         with:
           path: |
             ${{ steps.global-cache-dir-path.outputs.dir }}
-            node_modules
           key: ${{ runner.os }}-${{ matrix.node-version }}-floating-deps
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-
@@ -211,7 +208,6 @@ jobs:
         with:
           path: |
             ${{ steps.global-cache-dir-path.outputs.dir }}
-            node_modules
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{
             hashFiles('**/yarn.lock'
             ) }}
