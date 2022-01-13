@@ -26,8 +26,7 @@
   "scripts": {
     "lerna:lint-staged": "lint-staged",
     "lint": "eslint ./*.js tests",
-    "nodetest": "mocha tests/*test.js --timeout 1000",
-    "test": "npm run nodetest",
+    "test": "mocha tests/*test.js --timeout 1000",
     "update-fixtures": "node ./tests/utils/update-plugin-fixtures.js"
   },
   "main": "index.js",
