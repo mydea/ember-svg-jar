@@ -89,9 +89,7 @@ jobs:
 
       - name: Test
         working-directory: packages/broccoli-svg-optimizer
-        run: |
-          ls node_modules
-          yarn test
+        run: yarn test
 
   floating-dependencies:
     name: Floating Dependencies
