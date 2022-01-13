@@ -18,13 +18,13 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.1.0",
-    "mocha": "^6.2.0",
     "husky": "^3.0.1",
-    "lint-staged": "^9.2.1",
+    "lint-staged": "^12.1.7",
+    "mocha": "^6.2.0",
     "prettier": "^1.18.2"
   },
   "scripts": {
-    "prepublishOnly": "npm test",
+    "lerna:lint-staged": "lint-staged",
     "lint": "eslint ./*.js tests",
     "nodetest": "mocha tests/*test.js --timeout 1000",
     "test": "npm run lint && npm run nodetest",
@@ -45,16 +45,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "**/*.{json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.{js,ts}": [
-      "eslint --fix",
-      "git add"
-    ]
   },
   "keywords": [
     "broccoli",
