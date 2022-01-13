@@ -26,8 +26,7 @@
   "scripts": {
     "lerna:lint-staged": "lint-staged",
     "lint": "eslint .",
-    "test": "mocha tests/*test.js --timeout 1000",
-    "update-fixtures": "node ./tests/utils/update-plugin-fixtures.js"
+    "test": "mocha tests/*test.js --timeout 1000"
   },
   "main": "index.js",
   "author": "Ivan Votti",
