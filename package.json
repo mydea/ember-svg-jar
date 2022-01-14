@@ -35,6 +35,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@embroider/macros": "^0.50.2",
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-concat": "^4.2.5",
     "broccoli-funnel": "^3.0.8",

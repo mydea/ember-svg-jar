@@ -1,5 +1,6 @@
 import { isNone } from '@ember/utils';
 import { htmlSafe } from '@ember/template';
+import { importSync } from '@embroider/macros';
 
 const accessibilityElements = ['title', 'desc'];
 
@@ -110,7 +111,7 @@ export function inlineSvgFor(assetId, getInlineAsset, attrs = {}) {
   )}>${createAccessibilityElements(attrs)}${asset.content}</svg>`;
 }
 
-export default function makeSvg(assetId, attrs = {}, getInlineAsset) {
+export default function makeSvg(assetId, attrs = {}) {
   if (!assetId) {
     // eslint-disable-next-line no-console
     console.warn('ember-svg-jar: asset name should not be undefined or null');
@@ -123,4 +124,14 @@ export default function makeSvg(assetId, attrs = {}, getInlineAsset) {
     : inlineSvgFor(assetId, getInlineAsset, attrs);
 
   return htmlSafe(svg);
+}
+
+function getInlineAsset(assetId) {
+  try {
+    let inlineMap = importSync('ember-svg-jar/inlined').default;
+    let getter = inlineMap[assetId];
+    return getter ? getter() : null;
+  } catch (error) {
+    return null;
+  }
 }
